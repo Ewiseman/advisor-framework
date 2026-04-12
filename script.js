@@ -9,18 +9,18 @@ let currentStep = 1;
 const maxStep = steps.length;
 
 function render() {
-  steps.forEach((el, index) => {
+  steps.forEach((element, index) => {
     if (index < currentStep) {
-      el.classList.remove("hidden-step");
-      el.classList.add("revealed");
+      element.classList.remove("hidden-step");
+      element.classList.add("revealed");
     } else {
-      el.classList.remove("revealed");
-      el.classList.add("hidden-step");
+      element.classList.remove("revealed");
+      element.classList.add("hidden-step");
     }
   });
 
-  if (backBtn) backBtn.disabled = currentStep === 1;
-  if (nextBtn) nextBtn.disabled = currentStep === maxStep;
+  backBtn.disabled = currentStep === 1;
+  nextBtn.disabled = currentStep === maxStep;
 }
 
 function goNext() {
@@ -37,14 +37,9 @@ function goBack() {
   }
 }
 
-if (nextBtn) nextBtn.addEventListener("click", goNext);
-if (backBtn) backBtn.addEventListener("click", goBack);
+nextBtn.addEventListener("click", goNext);
+backBtn.addEventListener("click", goBack);
 
-// Make sure the page itself can receive focus
-document.body.setAttribute("tabindex", "0");
-document.body.focus();
-
-// Listen at the window level for keyboard input
 window.addEventListener("keydown", (event) => {
   const active = document.activeElement;
   const tag = active ? active.tagName : "";
