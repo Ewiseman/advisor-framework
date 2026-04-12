@@ -4,46 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wealth Framework</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <main class="page">
 
-  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Wealth Framework</h1>
+    </header>
 
-    <h1 class="title">Wealth Framework</h1>
-    <p class="subtitle">How we build, protect, and use wealth over time</p>
-
-    <!-- Top Level -->
-    <div class="top-row">
-      <div class="box main">Build Wealth</div>
-      <div class="box main">Protect Wealth</div>
-      <div class="box main">Use Wealth</div>
+    <!-- Controls -->
+    <div class="controls">
+      <button id="backBtn" class="nav-btn">←</button>
+      <button id="nextBtn" class="nav-btn">→</button>
     </div>
 
-    <!-- Bottom Level -->
-    <div class="bottom-row">
+    <!-- Framework -->
+    <section class="framework-grid">
 
-      <div class="column">
-        <div class="box sub">Investment Management</div>
-        <div class="box sub">Savings Strategy</div>
-        <div class="box sub">Asset Allocation</div>
+      <!-- BUILD WEALTH -->
+      <div class="pillar">
+
+        <div id="step-1" class="box main revealed">Build Wealth</div>
+
+        <div class="subgroup-row">
+
+          <div class="subgroup">
+            <div id="step-2" class="box sub hidden-step">Investment Management</div>
+
+            <div class="mini-grid">
+              <div id="step-3" class="box mini hidden-step">ETFs</div>
+              <div id="step-4" class="box mini hidden-step">Bonds</div>
+              <div id="step-5" class="box mini hidden-step">Rebalancing</div>
+              <div id="step-6" class="box mini hidden-step">Risk Level</div>
+            </div>
+          </div>
+
+          <div class="subgroup">
+            <div id="step-7" class="box sub hidden-step">Cash & Income</div>
+
+            <div class="mini-grid">
+              <div id="step-8" class="box mini hidden-step">Emergency Fund</div>
+              <div id="step-9" class="box mini hidden-step">Savings Rate</div>
+              <div id="step-10" class="box mini hidden-step">Income Planning</div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div class="column">
-        <div class="box sub">Insurance Planning</div>
-        <div class="box sub">Tax Strategies</div>
-        <div class="box sub">Risk Management</div>
+      <!-- PROTECT WEALTH -->
+      <div class="pillar">
+
+        <div id="step-11" class="box main hidden-step">Protect Wealth</div>
+
+        <div class="subgroup-row">
+
+          <div class="subgroup">
+            <div id="step-12" class="box sub hidden-step">Tax Strategy</div>
+
+            <div class="mini-grid">
+              <div id="step-13" class="box mini hidden-step">Tax Loss Harvesting</div>
+              <div id="step-14" class="box mini hidden-step">Asset Location</div>
+              <div id="step-15" class="box mini hidden-step">Roth Strategy</div>
+            </div>
+          </div>
+
+          <div class="subgroup">
+            <div id="step-16" class="box sub hidden-step">Insurance</div>
+
+            <div class="mini-grid">
+              <div id="step-17" class="box mini hidden-step">Life</div>
+              <div id="step-18" class="box mini hidden-step">Disability</div>
+              <div id="step-19" class="box mini hidden-step">Umbrella</div>
+            </div>
+          </div>
+
+          <div class="subgroup">
+            <div id="step-20" class="box sub hidden-step">Estate</div>
+
+            <div class="mini-grid">
+              <div id="step-21" class="box mini hidden-step">Will</div>
+              <div id="step-22" class="box mini hidden-step">Trust</div>
+              <div id="step-23" class="box mini hidden-step">Beneficiaries</div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div class="column">
-        <div class="box sub">Goals & Priorities</div>
-        <div class="box sub">Income Planning</div>
-        <div class="box sub">Distribution Strategy</div>
+      <!-- USE WEALTH -->
+      <div class="pillar">
+
+        <div id="step-24" class="box main hidden-step">Use Wealth</div>
+
+        <div class="subgroup-row">
+
+          <div class="subgroup">
+            <div id="step-25" class="box sub hidden-step">Goals & Planning</div>
+
+            <div class="mini-grid">
+              <div id="step-26" class="box mini hidden-step">Retirement</div>
+              <div id="step-27" class="box mini hidden-step">Education</div>
+              <div id="step-28" class="box mini hidden-step">Lifestyle</div>
+              <div id="step-29" class="box mini hidden-step">Legacy</div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-    </div>
+    </section>
 
-  </div>
+  </main>
+
+  <!-- SCRIPT MUST BE HERE -->
+  <script src="script.js"></script>
 
 </body>
 </html>
