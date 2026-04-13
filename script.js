@@ -1,16 +1,20 @@
 const backBtn = document.getElementById("backBtn");
 const nextBtn = document.getElementById("nextBtn");
 
-const steps = Array.from({ length: 30 }, (_, i) =>
-  document.getElementById(`step-${i + 1}`)
-).filter(Boolean);
+const steppedElements = Array.from(document.querySelectorAll("[data-step]"));
+
+const stepValues = [...new Set(
+  steppedElements.map((el) => Number(el.dataset.step))
+)].sort((a, b) => a - b);
 
 let currentStep = 1;
-const maxStep = steps.length;
+const maxStep = stepValues.length;
 
 function render() {
-  steps.forEach((el, index) => {
-    if (index < currentStep) {
+  steppedElements.forEach((el) => {
+    const step = Number(el.dataset.step);
+
+    if (step <= currentStep) {
       el.classList.add("revealed");
       el.classList.remove("hidden-step");
     } else {
@@ -25,14 +29,14 @@ function render() {
 
 function next() {
   if (currentStep < maxStep) {
-    currentStep++;
+    currentStep += 1;
     render();
   }
 }
 
 function back() {
   if (currentStep > 1) {
-    currentStep--;
+    currentStep -= 1;
     render();
   }
 }
@@ -41,6 +45,15 @@ nextBtn.addEventListener("click", next);
 backBtn.addEventListener("click", back);
 
 window.addEventListener("keydown", (e) => {
+  const active = document.activeElement;
+  const tag = active ? active.tagName : "";
+  const isTyping =
+    tag === "INPUT" ||
+    tag === "TEXTAREA" ||
+    (active && active.isContentEditable);
+
+  if (isTyping) return;
+
   if (e.key === "ArrowRight") next();
   if (e.key === "ArrowLeft") back();
 });

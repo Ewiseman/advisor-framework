@@ -11,10 +11,8 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <main class="page">
-
     <header class="header">
       <h1>Wealth Framework</h1>
     </header>
@@ -23,28 +21,28 @@
 
       <!-- BUILD -->
       <div class="pillar">
-        <div id="step-1" class="box main revealed">Build Wealth</div>
+        <div data-step="1" class="box main revealed">Build Wealth</div>
 
         <div class="subgroup-row">
           <div class="subgroup">
-            <div id="step-4" class="box sub hidden-step">Investment Management</div>
+            <div data-step="4" class="box sub hidden-step">Investment Management</div>
 
             <div class="mini-grid">
-              <div id="step-5" class="box mini hidden-step">ETFs</div>
-              <div id="step-6" class="box mini hidden-step">Bonds</div>
-              <div id="step-7" class="box mini hidden-step">Rebalancing</div>
-              <div id="step-8" class="box mini hidden-step">Risk Level</div>
+              <div data-step="5" class="box mini hidden-step">ETFs</div>
+              <div data-step="5" class="box mini hidden-step">Bonds</div>
+              <div data-step="5" class="box mini hidden-step">Rebalancing</div>
+              <div data-step="5" class="box mini hidden-step">Risk Level</div>
             </div>
           </div>
 
           <div class="subgroup">
-            <div id="step-9" class="box sub hidden-step">Cash & Income</div>
+            <div data-step="6" class="box sub hidden-step">Cash &amp; Income</div>
 
             <div class="mini-grid">
-              <div id="step-10" class="box mini hidden-step">Emergency Fund</div>
-              <div id="step-11" class="box mini hidden-step">Savings Rate</div>
-              <div id="step-12" class="box mini hidden-step">Income Planning</div>
-              <div id="step-13" class="box mini hidden-step">Liquidity</div>
+              <div data-step="7" class="box mini hidden-step">Emergency Fund</div>
+              <div data-step="7" class="box mini hidden-step">Savings Rate</div>
+              <div data-step="7" class="box mini hidden-step">Income Planning</div>
+              <div data-step="7" class="box mini hidden-step">Liquidity</div>
             </div>
           </div>
         </div>
@@ -52,36 +50,36 @@
 
       <!-- PROTECT -->
       <div class="pillar">
-        <div id="step-2" class="box main hidden-step">Protect Wealth</div>
+        <div data-step="2" class="box main hidden-step">Protect Wealth</div>
 
         <div class="subgroup-row">
           <div class="subgroup">
-            <div id="step-14" class="box sub hidden-step">Tax Strategy</div>
+            <div data-step="8" class="box sub hidden-step">Tax Strategy</div>
 
             <div class="mini-grid">
-              <div id="step-15" class="box mini hidden-step">Tax Loss Harvesting</div>
-              <div id="step-16" class="box mini hidden-step">Asset Location</div>
-              <div id="step-17" class="box mini hidden-step">Roth Strategy</div>
+              <div data-step="9" class="box mini hidden-step">Tax Loss Harvesting</div>
+              <div data-step="9" class="box mini hidden-step">Asset Location</div>
+              <div data-step="9" class="box mini hidden-step">Roth Strategy</div>
             </div>
           </div>
 
           <div class="subgroup">
-            <div id="step-18" class="box sub hidden-step">Insurance</div>
+            <div data-step="10" class="box sub hidden-step">Insurance</div>
 
             <div class="mini-grid">
-              <div id="step-19" class="box mini hidden-step">Life</div>
-              <div id="step-20" class="box mini hidden-step">Disability</div>
-              <div id="step-21" class="box mini hidden-step">Umbrella</div>
+              <div data-step="11" class="box mini hidden-step">Life</div>
+              <div data-step="11" class="box mini hidden-step">Disability</div>
+              <div data-step="11" class="box mini hidden-step">Umbrella</div>
             </div>
           </div>
 
           <div class="subgroup">
-            <div id="step-22" class="box sub hidden-step">Estate</div>
+            <div data-step="12" class="box sub hidden-step">Estate</div>
 
             <div class="mini-grid">
-              <div id="step-23" class="box mini hidden-step">Will</div>
-              <div id="step-24" class="box mini hidden-step">Trust</div>
-              <div id="step-25" class="box mini hidden-step">Beneficiaries</div>
+              <div data-step="13" class="box mini hidden-step">Will</div>
+              <div data-step="13" class="box mini hidden-step">Trust</div>
+              <div data-step="13" class="box mini hidden-step">Beneficiaries</div>
             </div>
           </div>
         </div>
@@ -89,17 +87,17 @@
 
       <!-- USE -->
       <div class="pillar">
-        <div id="step-3" class="box main hidden-step">Use Wealth</div>
+        <div data-step="3" class="box main hidden-step">Use Wealth</div>
 
         <div class="subgroup-row">
           <div class="subgroup">
-            <div id="step-26" class="box sub hidden-step">Goals & Planning</div>
+            <div data-step="14" class="box sub hidden-step">Goals &amp; Planning</div>
 
             <div class="mini-grid">
-              <div id="step-27" class="box mini hidden-step">Retirement</div>
-              <div id="step-28" class="box mini hidden-step">Education</div>
-              <div id="step-29" class="box mini hidden-step">Lifestyle</div>
-              <div id="step-30" class="box mini hidden-step">Legacy</div>
+              <div data-step="15" class="box mini hidden-step">Retirement</div>
+              <div data-step="15" class="box mini hidden-step">Education</div>
+              <div data-step="15" class="box mini hidden-step">Lifestyle</div>
+              <div data-step="15" class="box mini hidden-step">Legacy</div>
             </div>
           </div>
         </div>
@@ -107,12 +105,10 @@
 
     </section>
 
-    <!-- Controls at bottom -->
     <div class="controls">
-      <button id="backBtn" class="nav-btn">←</button>
-      <button id="nextBtn" class="nav-btn">→</button>
+      <button id="backBtn" class="nav-btn" aria-label="Back">←</button>
+      <button id="nextBtn" class="nav-btn" aria-label="Next">→</button>
     </div>
-
   </main>
 
   <script src="script.js"></script>
