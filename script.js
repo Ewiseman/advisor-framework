@@ -2,19 +2,15 @@ const backBtn = document.getElementById("backBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 const steppedElements = Array.from(document.querySelectorAll("[data-step]"));
+const steps = [...new Set(steppedElements.map(el => +el.dataset.step))].sort((a, b) => a - b);
 
-const stepValues = [...new Set(
-  steppedElements.map((el) => Number(el.dataset.step))
-)].sort((a, b) => a - b);
-
-let currentStep = 1;
-const maxStep = stepValues.length;
+let current = 1;
 
 function render() {
-  steppedElements.forEach((el) => {
-    const step = Number(el.dataset.step);
+  steppedElements.forEach(el => {
+    const step = +el.dataset.step;
 
-    if (step <= currentStep) {
+    if (step <= current) {
       el.classList.add("revealed");
       el.classList.remove("hidden-step");
     } else {
@@ -23,20 +19,20 @@ function render() {
     }
   });
 
-  backBtn.disabled = currentStep === 1;
-  nextBtn.disabled = currentStep === maxStep;
+  backBtn.disabled = current === 1;
+  nextBtn.disabled = current === steps.length;
 }
 
 function next() {
-  if (currentStep < maxStep) {
-    currentStep += 1;
+  if (current < steps.length) {
+    current++;
     render();
   }
 }
 
 function back() {
-  if (currentStep > 1) {
-    currentStep -= 1;
+  if (current > 1) {
+    current--;
     render();
   }
 }
