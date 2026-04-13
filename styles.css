@@ -3,19 +3,21 @@
 }
 
 :root {
-  --bg: #000;
-  --text-strong: #fff;
-  --text-medium: rgba(255,255,255,0.9);
-  --text-soft: rgba(255,255,255,0.75);
-  --border-strong: rgba(255,255,255,0.95);
-  --border-medium: rgba(255,255,255,0.65);
-  --border-soft: rgba(255,255,255,0.4);
-  --ej-yellow: #ffd200;
+  --bg: #0b0b0c;
+  --text-strong: #f5f5f5;
+  --text-medium: rgba(255, 255, 255, 0.85);
+  --text-soft: rgba(255, 255, 255, 0.65);
+
+  --border-strong: rgba(255, 255, 255, 0.75);
+  --border-medium: rgba(255, 255, 255, 0.45);
+  --border-soft: rgba(255, 255, 255, 0.25);
+
+  --ej-yellow: #f4c842;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: radial-gradient(circle at top, #111 0%, #0b0b0c 60%);
   color: var(--text-strong);
   font-family: "Inter", sans-serif;
 }
@@ -38,7 +40,7 @@ body {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .framework-grid {
@@ -80,6 +82,7 @@ body {
   justify-content: center;
   text-align: center;
   border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .main {
@@ -88,6 +91,7 @@ body {
   border: 2px solid var(--border-strong);
   font-size: 20px;
   font-weight: 600;
+  color: var(--text-strong);
 }
 
 .sub {
@@ -95,6 +99,7 @@ body {
   padding: 0 10px;
   border: 1.5px solid var(--border-medium);
   font-size: 13px;
+  color: var(--text-medium);
 }
 
 .mini {
@@ -113,7 +118,6 @@ body {
   border-color: var(--ej-yellow);
 }
 
-/* visibility */
 .hidden-step {
   visibility: hidden;
   opacity: 0;
@@ -135,14 +139,15 @@ body {
   font-weight: 700;
   text-decoration: underline;
   margin-bottom: 10px;
+  color: var(--text-strong);
 }
 
 .trigger-columns {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
   align-items: start;
-  max-width: 820px;
+  max-width: 900px;
 }
 
 .trigger-block {
@@ -152,7 +157,7 @@ body {
 .trigger-sub {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 6px;
 }
 
@@ -160,7 +165,7 @@ body {
   margin: 0;
   padding-left: 18px;
   font-size: 11px;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255, 255, 255, 0.68);
   line-height: 1.4;
 }
 
@@ -180,9 +185,9 @@ body {
   width: 46px;
   height: 46px;
   border-radius: 999px;
-  border: 1px solid #fff;
+  border: 1px solid var(--border-strong);
   background: transparent;
-  color: #fff;
+  color: var(--text-strong);
   font-size: 20px;
   cursor: pointer;
   transition: all 0.18s ease;
