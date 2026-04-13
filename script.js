@@ -9,13 +9,13 @@ let currentStep = 1;
 const maxStep = steps.length;
 
 function render() {
-  steps.forEach((element, index) => {
+  steps.forEach((el, index) => {
     if (index < currentStep) {
-      element.classList.remove("hidden-step");
-      element.classList.add("revealed");
+      el.classList.add("revealed");
+      el.classList.remove("hidden-step");
     } else {
-      element.classList.remove("revealed");
-      element.classList.add("hidden-step");
+      el.classList.add("hidden-step");
+      el.classList.remove("revealed");
     }
   });
 
@@ -23,40 +23,26 @@ function render() {
   nextBtn.disabled = currentStep === maxStep;
 }
 
-function goNext() {
+function next() {
   if (currentStep < maxStep) {
-    currentStep += 1;
+    currentStep++;
     render();
   }
 }
 
-function goBack() {
+function back() {
   if (currentStep > 1) {
-    currentStep -= 1;
+    currentStep--;
     render();
   }
 }
 
-nextBtn.addEventListener("click", goNext);
-backBtn.addEventListener("click", goBack);
+nextBtn.addEventListener("click", next);
+backBtn.addEventListener("click", back);
 
-window.addEventListener("keydown", (event) => {
-  const active = document.activeElement;
-  const tag = active ? active.tagName : "";
-  const isTyping =
-    tag === "INPUT" ||
-    tag === "TEXTAREA" ||
-    (active && active.isContentEditable);
-
-  if (isTyping) return;
-
-  if (event.key === "ArrowRight") {
-    event.preventDefault();
-    goNext();
-  } else if (event.key === "ArrowLeft") {
-    event.preventDefault();
-    goBack();
-  }
+window.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") next();
+  if (e.key === "ArrowLeft") back();
 });
 
 render();
