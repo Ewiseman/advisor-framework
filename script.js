@@ -54,8 +54,15 @@ window.addEventListener("keydown", (e) => {
 
   if (isTyping) return;
 
-  if (e.key === "ArrowRight") next();
-  if (e.key === "ArrowLeft") back();
+  if (e.key === "ArrowRight") {
+    e.preventDefault();
+    next();
+  }
+
+  if (e.key === "ArrowLeft") {
+    e.preventDefault();
+    back();
+  }
 });
 
 render();
