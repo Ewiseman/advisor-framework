@@ -2,13 +2,17 @@ const backBtn = document.getElementById("backBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 const steppedElements = Array.from(document.querySelectorAll("[data-step]"));
-const steps = [...new Set(steppedElements.map(el => +el.dataset.step))].sort((a, b) => a - b);
+const steps = [...new Set(steppedElements.map((el) => Number(el.dataset.step)))].sort(
+  (a, b) => a - b
+);
 
-let current = 1;
+let current = 0;
+const minStep = 0;
+const maxStep = steps[steps.length - 1] ?? 1;
 
 function render() {
-  steppedElements.forEach(el => {
-    const step = +el.dataset.step;
+  steppedElements.forEach((el) => {
+    const step = Number(el.dataset.step);
 
     if (step <= current) {
       el.classList.add("revealed");
@@ -19,26 +23,31 @@ function render() {
     }
   });
 
-  backBtn.disabled = current === 1;
-  nextBtn.disabled = current === steps.length;
+  if (backBtn) backBtn.disabled = current <= minStep;
+  if (nextBtn) nextBtn.disabled = current >= maxStep;
 }
 
 function next() {
-  if (current < steps.length) {
-    current++;
+  if (current < maxStep) {
+    current += 1;
     render();
   }
 }
 
 function back() {
-  if (current > 1) {
-    current--;
+  if (current > minStep) {
+    current -= 1;
     render();
   }
 }
 
-nextBtn.addEventListener("click", next);
-backBtn.addEventListener("click", back);
+if (nextBtn) {
+  nextBtn.addEventListener("click", next);
+}
+
+if (backBtn) {
+  backBtn.addEventListener("click", back);
+}
 
 window.addEventListener("keydown", (e) => {
   const active = document.activeElement;

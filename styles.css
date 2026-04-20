@@ -4,6 +4,7 @@
 
 :root {
   --bg: #0b0b0c;
+
   --text-strong: #f5f5f5;
   --text-medium: rgba(255, 255, 255, 0.85);
   --text-soft: rgba(255, 255, 255, 0.65);
@@ -14,6 +15,8 @@
 
   --ej-yellow: #f4c842;
 }
+
+/* ===== BASE ===== */
 
 body {
   margin: 0;
@@ -31,17 +34,51 @@ body {
   padding: 24px;
 }
 
+/* ===== HEADER + CONNECTOR ===== */
+
 .header {
+  position: relative;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 20px;
 }
+
+/* connector container */
+.top-connector {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+/* vertical line */
+.vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.25);
+  transform: translateX(-50%);
+}
+
+/* horizontal line */
+.horizontal-line {
+  position: absolute;
+  top: 20px;
+  left: 16.66%;
+  width: 66.66%;
+  height: 1px;
+  background: rgba(255,255,255,0.25);
+}
+
+/* ===== MAIN GRID ===== */
 
 .framework-grid {
   flex: 1;
@@ -76,13 +113,15 @@ body {
   gap: 6px;
 }
 
+/* ===== BOXES ===== */
+
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
 }
 
 .main {
@@ -107,16 +146,19 @@ body {
   padding: 6px;
   border: 1px solid var(--border-soft);
   font-size: 10px;
-  cursor: pointer;
   color: var(--text-soft);
+  cursor: pointer;
   transition: all 0.18s ease;
 }
 
+/* hover only on smallest boxes */
 .mini:hover {
   background: var(--ej-yellow);
   color: #000;
   border-color: var(--ej-yellow);
 }
+
+/* ===== STEP VISIBILITY ===== */
 
 .hidden-step {
   visibility: hidden;
@@ -128,7 +170,8 @@ body {
   opacity: 1;
 }
 
-/* final section */
+/* ===== BOTTOM TEXT SECTION ===== */
+
 .trigger-section {
   margin-top: 28px;
   text-align: left;
@@ -145,7 +188,7 @@ body {
 .trigger-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 10px;                 /* tightened spacing */
   align-items: start;
   max-width: 900px;
 }
@@ -157,7 +200,7 @@ body {
 .trigger-sub {
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255,255,255,0.82);
   margin-bottom: 6px;
 }
 
@@ -165,7 +208,7 @@ body {
   margin: 0;
   padding-left: 18px;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255,255,255,0.68);
   line-height: 1.4;
 }
 
@@ -173,7 +216,8 @@ body {
   margin-bottom: 2px;
 }
 
-/* controls */
+/* ===== CONTROLS ===== */
+
 .controls {
   display: flex;
   justify-content: center;
@@ -202,6 +246,8 @@ body {
 .nav-btn:disabled {
   opacity: 0.3;
 }
+
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 980px) {
   .framework-grid,
