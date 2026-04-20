@@ -49,6 +49,44 @@ if (backBtn) {
   backBtn.addEventListener("click", back);
 }
 
+const assetAllocationBox = document.getElementById("assetAllocationBox");
+const assetModalOverlay = document.getElementById("assetModalOverlay");
+const assetModalClose = document.getElementById("assetModalClose");
+
+function openAssetModal() {
+  if (!assetModalOverlay) return;
+  assetModalOverlay.classList.remove("hidden");
+  document.body.classList.add("modal-open");
+}
+
+function closeAssetModal() {
+  if (!assetModalOverlay) return;
+  assetModalOverlay.classList.add("hidden");
+  document.body.classList.remove("modal-open");
+}
+
+if (assetAllocationBox) {
+  assetAllocationBox.addEventListener("click", openAssetModal);
+}
+
+if (assetModalClose) {
+  assetModalClose.addEventListener("click", closeAssetModal);
+}
+
+if (assetModalOverlay) {
+  assetModalOverlay.addEventListener("click", (e) => {
+    if (e.target === assetModalOverlay) {
+      closeAssetModal();
+    }
+  });
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && assetModalOverlay && !assetModalOverlay.classList.contains("hidden")) {
+    closeAssetModal();
+  }
+});
+
 window.addEventListener("keydown", (e) => {
   const active = document.activeElement;
   const tag = active ? active.tagName : "";

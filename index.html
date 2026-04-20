@@ -38,7 +38,6 @@
             <div class="mini-grid">
                 <div data-step="9" class="box mini hidden-step">Capital Gains Strategy</div>
                 <div data-step="9" class="box mini hidden-step">Tax Loss Harvesting</div>
-                <div data-step="9" class="box mini hidden-step">Asset Location</div>
                 <div data-step="9" class="box mini hidden-step">Roth Conversions</div>
                 <div data-step="9" class="box mini hidden-step">Income Timing</div>
                 <div data-step="9" class="box mini hidden-step">Qualified Account Strategy</div>
@@ -55,12 +54,12 @@
             <div data-step="10" class="box sub hidden-step">Insurance Analysis</div>
 
             <div class="mini-grid">
-              <div data-step="11" class="box mini hidden-step">Life Coverage</div>
-                <div data-step="11" class="box mini hidden-step">Income Protection</div>
+                <div data-step="11" class="box mini hidden-step">Health Coverage</div>
+                <div data-step="11" class="box mini hidden-step">Life Coverage</div>
+                <div data-step="11" class="box mini hidden-step">Disability Protection</div>
                 <div data-step="11" class="box mini hidden-step">Umbrella Coverage</div>
                 <div data-step="11" class="box mini hidden-step">Property Coverage</div>
                 <div data-step="11" class="box mini hidden-step">Long-Term Care</div>
-                <div data-step="11" class="box mini hidden-step">Health Coverage</div>
                 <div data-step="11" class="box mini hidden-step">Key Person Coverage</div>
                 <div data-step="11" class="box mini hidden-step">Buy-Sell Funding</div>
                 <div data-step="11" class="box mini hidden-step">Estate Insurances</div>
@@ -96,15 +95,15 @@
             <div data-step="4" class="box sub hidden-step">Investment Management</div>
 
             <div class="mini-grid">
-  <div data-step="5" class="box mini hidden-step">Asset Allocation</div>
+  <div data-step="5" class="box mini hidden-step" id="assetAllocationBox">Asset Allocation</div>
   <div data-step="5" class="box mini hidden-step">Investment Selection</div>
   <div data-step="5" class="box mini hidden-step">Risk Positioning</div>
   <div data-step="5" class="box mini hidden-step">Rebalancing</div>
-  <div data-step="5" class="box mini hidden-step">Tax Efficiency</div>
   <div data-step="5" class="box mini hidden-step">Ongoing Oversight</div>
   <div data-step="5" class="box mini hidden-step">Market Positioning</div>
   <div data-step="5" class="box mini hidden-step">Concentrated Stock</div>
   <div data-step="5" class="box mini hidden-step">Stock Compensation</div>
+  <div data-step="5" class="box mini hidden-step">Behavioral Coaching</div>
 </div>
           </div>
 
@@ -159,41 +158,43 @@
 
     <!-- BOTTOM TEXT -->
     <section class="trigger-section">
-      <div data-step="18" class="trigger-title hidden-step">What Changes the Plan</div>
+  <div data-step="18" class="trigger-title hidden-step">What Changes the Plan</div>
 
-      <div class="trigger-columns">
-        <div data-step="19" class="trigger-block hidden-step">
-          <div class="trigger-sub">Economic &amp; Market</div>
-          <ul>
-            <li>Market Volatility</li>
-            <li>Interest Rates</li>
-            <li>Inflation</li>
-            <li>Economic Conditions</li>
-          </ul>
-        </div>
+  <div class="trigger-columns">
+    
+    <div data-step="19" class="trigger-block hidden-step">
+      <div class="trigger-sub">Markets & Economy</div>
+      <ul>
+        <li>Market Volatility</li>
+        <li>Interest Rates</li>
+        <li>Inflation</li>
+        <li>Economic Shifts</li>
+      </ul>
+    </div>
 
-        <div data-step="20" class="trigger-block hidden-step">
-          <div class="trigger-sub">Policy &amp; External Changes</div>
-          <ul>
-            <li>Tax Law Changes</li>
-            <li>Geopolitical Events</li>
-            <li>Regulatory Changes</li>
-          </ul>
-        </div>
+    <div data-step="20" class="trigger-block hidden-step">
+      <div class="trigger-sub">Taxes & Rules</div>
+      <ul>
+        <li>Tax Law Changes</li>
+        <li>Regulatory Changes</li>
+        <li>Estate Law Updates</li>
+      </ul>
+    </div>
 
-        <div data-step="21" class="trigger-block hidden-step">
-          <div class="trigger-sub">Life Events</div>
-          <ul>
-            <li>Marriage / Divorce</li>
-            <li>Children / Grandchildren</li>
-            <li>Retirement</li>
-            <li>Death / Inheritance</li>
-            <li>Health Events</li>
-            <li>Career Change</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div data-step="21" class="trigger-block hidden-step">
+      <div class="trigger-sub">Life</div>
+      <ul>
+        <li>Marriage / Divorce</li>
+        <li>Children</li>
+        <li>Retirement</li>
+        <li>Inheritance</li>
+        <li>Health</li>
+        <li>Career Change</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
     <div class="controls">
       <button id="backBtn" class="nav-btn">←</button>
@@ -201,6 +202,22 @@
     </div>
 
   </main>
+
+  <div id="assetModalOverlay" class="modal-overlay hidden">
+  <div class="modal-window">
+    <button id="assetModalClose" class="modal-close" aria-label="Close modal">×</button>
+    <h2>Asset Allocation</h2>
+    <p>
+      Asset allocation is the process of dividing investments across different asset
+      classes—such as stocks, bonds, and cash—based on risk tolerance, time horizon,
+      and financial goals.
+    </p>
+    <p>
+      The purpose is not just return. It is also to manage risk, improve diversification,
+      and create a portfolio structure that can hold up through different market environments.
+    </p>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>
